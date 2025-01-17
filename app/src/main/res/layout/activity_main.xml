@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/media_player"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintEnd_toEndOf="@+id/imageIV"
+        app:layout_constraintStart_toStartOf="@+id/imageIV"
+        app:layout_constraintTop_toBottomOf="@+id/progressSB">
+
+        <ImageView
+            android:id="@+id/playIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_play_24" />
+
+        <ImageView
+            android:id="@+id/pauseIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:src="@drawable/ic_pause_24" />
+
+        <ImageView
+            android:id="@+id/stopIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:src="@drawable/ic_stop_24" />
+
+        <ImageView
+            android:id="@+id/prevIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:src="@drawable/ic_prev_24" />
+
+        <ImageView
+            android:id="@+id/nextIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:src="@drawable/ic_next_24" />
+
+        <ImageView
+            android:id="@+id/volumeIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:src="@drawable/ic_volume_24" />
+        <SeekBar
+            android:id="@+id/volumeSB"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:progress="50"
+            android:thumbTint="?colorPrimary"
+            android:progressTint="?colorPrimary"
+            android:max="100"/>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/progressSB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:max="100"
+        android:thumbTint="?colorPrimary"
+        android:progressTint="?colorPrimary"
+        android:layout_marginHorizontal="@dimen/large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageIV" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
