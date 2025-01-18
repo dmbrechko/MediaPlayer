@@ -101,6 +101,10 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             mediaPlayer?.setVolume(volumeSB.progress.toFloat() / 100, volumeSB.progress.toFloat() / 100)
             mediaPlayer?.start()
+            mediaPlayer?.setOnCompletionListener {
+                current = ++current % songs.size
+                playSong()
+            }
             progressSB.max = mediaPlayer!!.duration
             handler.removeCallbacksAndMessages(handlerToken)
             handler.postDelayed(object: Runnable {
