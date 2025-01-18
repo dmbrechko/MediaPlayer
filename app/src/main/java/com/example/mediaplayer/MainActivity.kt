@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                     player.release()
                 }
                 mediaPlayer = null
+                handler.removeCallbacksAndMessages(null)
+                progressSB.progress = 0
             }
             prevIV.setOnClickListener {
                 if(--current < 0) songs.lastIndex else current
@@ -106,18 +108,18 @@ class MainActivity : AppCompatActivity() {
                 playSong()
             }
             progressSB.max = mediaPlayer!!.duration
-            handler.removeCallbacksAndMessages(handlerToken)
+            handler.removeCallbacksAndMessages(null)
             handler.postDelayed(object: Runnable {
                 override fun run() {
                     try {
                         progressSB.progress = mediaPlayer!!.currentPosition
-                        handler.postDelayed(this, handlerToken, 1000)
+                        handler.postDelayed(this, 1000)
                     } catch (e: Exception) {
                         progressSB.progress = 0
                     }
                 }
 
-            }, handlerToken,0)
+            },0)
         }
 
     }
