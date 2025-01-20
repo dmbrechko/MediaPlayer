@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 progressSB.progress = 0
             }
             prevIV.setOnClickListener {
-                if(--current < 0) songs.lastIndex else current
+                current = if(--current < 0) songs.lastIndex else current
                 playSong()
             }
             nextIV.setOnClickListener {
